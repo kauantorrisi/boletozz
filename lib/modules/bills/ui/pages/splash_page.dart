@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-
-import 'package:boletozz/core/common/design/app_pallete.dart';
-import 'package:boletozz/core/common/design/app_sizes.dart';
-import 'package:boletozz/core/utils/helpers_functions.dart';
+import 'package:boletozz/app_imports.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -23,11 +19,11 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppPallete.primary,
+      backgroundColor: AppPallete.darkTertiary,
       body: SizedBox(
         height: AppHelperFunctions.sceenHeight(context),
         width: AppHelperFunctions.sceenWidth(context),
-        child: const Center(
+        child: Center(
           child: Text(
             "Boletozz",
             style: TextStyle(

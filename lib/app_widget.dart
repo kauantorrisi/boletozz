@@ -1,24 +1,42 @@
-import 'package:flutter/material.dart';
-
-import 'package:boletozz/core/common/design/theme/theme.dart';
-import 'package:boletozz/features/home/pages/home_page.dart';
-import 'package:boletozz/features/home/pages/splash_page.dart';
+import 'package:boletozz/app_imports.dart';
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "Boletozz",
-      debugShowCheckedModeBanner: false,
-      theme: AppTheme.lightTheme,
-      darkTheme: AppTheme.darkTheme,
-      initialRoute: "/",
-      routes: {
-        "/": (_) => const SplashPage(),
-        "/home": (_) => const HomePage(),
-      },
+    final router = GoRouter(
+      routes: [
+        GoRoute(
+          name: 'home',
+          path: '/',
+          builder: (context, state) => BlocProvider(
+            create: (context) => BillsCubit(),
+            child: const HomePage(),
+          ),
+        ),
+        GoRoute(
+          path: '/bill-details',
+          builder: (context, state) => BlocProvider(
+            create: (context) => BillsCubit(),
+            child: BillDetailsPage(bill: state.extra! as BillModel),
+          ),
+        )
+      ],
+    );
+
+    return ScreenUtilInit(
+      designSize: Size(
+        AppHelperFunctions.sceenWidth(context),
+        AppHelperFunctions.sceenHeight(context),
+      ),
+      builder: (_, context) => MaterialApp.router(
+        title: "Boletozz",
+        debugShowCheckedModeBanner: false,
+        theme: AppTheme.lightTheme,
+        darkTheme: AppTheme.darkTheme,
+        routerConfig: router,
+      ),
     );
   }
 }

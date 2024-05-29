@@ -1,9 +1,4 @@
-import 'package:flutter/material.dart';
-
-import 'package:boletozz/core/common/design/app_pallete.dart';
-import 'package:boletozz/core/common/design/theme/custom_themes/elevated_button_theme.dart';
-import 'package:boletozz/core/common/design/theme/custom_themes/input_decoration_themes.dart';
-import 'package:boletozz/core/common/design/theme/custom_themes/text_themes.dart';
+import 'package:boletozz/app_imports.dart';
 
 class AppTheme {
   static ThemeData lightTheme = ThemeData(
@@ -13,6 +8,8 @@ class AppTheme {
     textTheme: AppTextThemes.lightTextTheme,
     inputDecorationTheme: AppInputDecorationThemes.lightInputDecorationTheme,
     elevatedButtonTheme: AppElevatedButtonThemes.lightElevatedButtonTheme,
+    floatingActionButtonTheme:
+        AppFloatingActionButtonTheme.lightFloatingActionButtonTheme,
   );
 
   static ThemeData darkTheme = ThemeData(
@@ -22,5 +19,7 @@ class AppTheme {
     textTheme: AppTextThemes.darkTextTheme,
     inputDecorationTheme: AppInputDecorationThemes.darkInputDecorationTheme,
     elevatedButtonTheme: AppElevatedButtonThemes.darkElevatedButtonTheme,
+    floatingActionButtonTheme:
+        AppFloatingActionButtonTheme.darkFloatingActionButtonTheme,
   );
 }

@@ -1,13 +1,10 @@
-import 'package:flutter/material.dart';
-
-import 'package:boletozz/core/common/design/app_pallete.dart';
-import 'package:boletozz/core/common/design/theme/custom_themes/text_themes.dart';
+import 'package:boletozz/app_imports.dart';
 
 class AppElevatedButtonThemes {
   static ElevatedButtonThemeData lightElevatedButtonTheme =
       ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
-      backgroundColor: AppPallete.primary,
+      backgroundColor: AppPallete.tertiary,
       fixedSize: const Size(395, 55),
       foregroundColor: AppPallete.textWhite,
       textStyle: AppTextThemes.darkTextTheme.titleLarge,
@@ -20,7 +17,7 @@ class AppElevatedButtonThemes {
   static ElevatedButtonThemeData darkElevatedButtonTheme =
       ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
-      backgroundColor: AppPallete.primary,
+      backgroundColor: AppPallete.tertiary,
       fixedSize: const Size(395, 55),
       foregroundColor: AppPallete.textWhite,
       textStyle: AppTextThemes.darkTextTheme.titleLarge,

@@ -1,65 +1,43 @@
+import 'package:boletozz/app_imports.dart';
+
 class AppSizes {
   // Padding and margin sizes
-  static const double xs = 4;
-  static const double sm = 8;
-  static const double md = 16;
-  static const double lg = 24;
-  static const double xl = 32;
+  static double xs = 4.r;
+  static double sm = 8.r;
+  static double md = 16.r;
+  static double lg = 24.r;
+  static double xl = 32.r;
 
   // Icon sizes
-  static const double iconXs = 12;
-  static const double iconSm = 16;
-  static const double iconMd = 20;
-  static const double iconLg = 32;
+  static double iconXs = 12.r;
+  static double iconSm = 16.r;
+  static double iconMd = 20.r;
+  static double iconLg = 32.r;
 
   // Font sizes
-  static const double fontSizeSm = 14;
-  static const double fontSizeMd = 16;
-  static const double fontSizeLg = 18;
-  static const double fontSizeXl = 32;
+  static double fontSizeSm = 14.sp;
+  static double fontSizeMd = 16.sp;
+  static double fontSizeLg = 18.sp;
+  static double fontSizeXl = 32.sp;
 
   // Button sizes
-  static const double buttonHeight = 18;
-  static const double buttonRadius = 12;
-  static const double buttonWidth = 120;
-  static const double buttonElevation = 4;
-
-  // AppBar height
-  static const double appBarHeight = 56;
-
-  // Image sizes
-  static const double imageThumbSize = 80;
+  static double buttonHeight = 18.h;
+  static double buttonRadius = 12.r;
+  static double buttonWidth = 120.w;
+  static double buttonElevation = 4.r;
 
   // Default spacing between sections
-  static const double defaultSpace = 24;
-  static const double spaceBtwItems = 16;
-  static const double spaceBtwSections = 32;
+  static double defaultSpace = 24.r;
+  static double spaceBtwItems = 16.r;
+  static double spaceBtwSections = 32.r;
+  static double spaceBtwInputFields = 16.r;
 
-  // Border radius
-  static const double borderRadiusSm = 4;
-  static const double borderRadiusMd = 8;
-  static const double borderRadiusLg = 12;
+  // Border Radius Sizes
+  static double borderRadiusSm = 4.r;
+  static double borderRadiusMd = 8.r;
+  static double borderRadiusLg = 12.r;
 
-  // Divider height
-  static const double dividerHeight = 1;
-
-  // Input field
-  static const double inputFieldRadius = 12;
-  static const double spaceBtwInputFields = 16;
-
-  // Card sizes
-  static const double cardRadiusLg = 16;
-  static const double cardRadiusMd = 12;
-  static const double cardRadiusSm = 10;
-  static const double cardRadiusXs = 6;
-  static const double cardElevation = 2;
-
-  // Image carousel height
-  static const double imageCarouselHeight = 200;
-
-  // Loading indicator size
-  static const double loadingIndicatorSize = 36;
-
-  // Grid view spacing
-  static const double gridViewSpacing = 16;
+  // Create Folder Dialog
+  static double createFolderDialogWidth = 300.w;
+  static double createFolderDialogHeight = 60.h;
 }

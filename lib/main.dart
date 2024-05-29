@@ -1,8 +1,9 @@
-import 'package:flutter/material.dart';
-
-import 'package:boletozz/app_widget.dart';
+import 'package:boletozz/app_imports.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await HiveConfig.start();
+
   runApp(
     const MainApp(),
   );
