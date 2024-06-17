@@ -53,7 +53,8 @@ class BillsCubit extends Cubit<BillsState> {
 
       nameController.clear();
     } catch (e) {
-      emit(BillsError("Erro ao adicionar boleto", e.toString()));
+      emit(BillsError("Erro ao adicionar boleto",
+          "Ação cancelada pelo usuário ou erro inesperado!"));
       emit(BillsLoaded(getAllBills()));
     }
   }

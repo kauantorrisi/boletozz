@@ -46,7 +46,10 @@ class _HomePageState extends State<HomePage> {
           resizeToAvoidBottomInset: false,
           appBar: AppBar(
             centerTitle: false,
-            title: const Text("Meus Boletos"),
+            title: const Text(
+              "Meus Boletos",
+              style: TextStyle(fontSize: 20),
+            ),
             backgroundColor: AppPallete.tertiary,
             actions: [
               IconButton(
@@ -107,7 +110,10 @@ Widget _billTile(
   final MenuController menuAnchorController = MenuController();
 
   return GestureDetector(
-    onTap: () => context.go('/bill-details', extra: bill),
+    onTap: () => Navigator.of(context).pushNamed(
+      "/bill-details",
+      arguments: bill,
+    ),
     child: Container(
       padding: EdgeInsets.all(AppSizes.sm),
       margin: EdgeInsets.only(bottom: AppSizes.sm),
@@ -172,7 +178,7 @@ Widget _billTile(
               controller: menuAnchorController,
               style: const MenuStyle(
                 backgroundColor:
-                    MaterialStatePropertyAll(AppPallete.darkTertiary),
+                    WidgetStatePropertyAll(AppPallete.darkTertiary),
                 visualDensity: VisualDensity.comfortable,
               ),
               menuChildren: [
@@ -197,9 +203,12 @@ Widget _billTile(
                 _divider(),
                 MenuButton(
                   context,
-                  onPressed: () {},
+                  onPressed: () => Navigator.of(context).pushNamed(
+                    "/edit-bill",
+                    arguments: bill,
+                  ),
                   icon: LucideIcons.pencil,
-                  text: "Editar",
+                  text: "Editar boleto",
                 ),
                 _divider(),
                 MenuButton(

@@ -1,41 +1,30 @@
 import 'package:boletozz/app_imports.dart';
+import 'package:boletozz/modules/bills/ui/pages/edit_bill_page.dart';
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final router = GoRouter(
-      routes: [
-        GoRoute(
-          name: 'home',
-          path: '/',
-          builder: (context, state) => BlocProvider(
-            create: (context) => BillsCubit(),
-            child: const HomePage(),
-          ),
+    return BlocProvider(
+      create: (context) => BillsCubit(),
+      child: ScreenUtilInit(
+        designSize: Size(
+          AppHelperFunctions.sceenWidth(context),
+          AppHelperFunctions.sceenHeight(context),
         ),
-        GoRoute(
-          path: '/bill-details',
-          builder: (context, state) => BlocProvider(
-            create: (context) => BillsCubit(),
-            child: BillDetailsPage(bill: state.extra! as BillModel),
-          ),
-        )
-      ],
-    );
-
-    return ScreenUtilInit(
-      designSize: Size(
-        AppHelperFunctions.sceenWidth(context),
-        AppHelperFunctions.sceenHeight(context),
-      ),
-      builder: (_, context) => MaterialApp.router(
-        title: "Boletozz",
-        debugShowCheckedModeBanner: false,
-        theme: AppTheme.lightTheme,
-        darkTheme: AppTheme.darkTheme,
-        routerConfig: router,
+        builder: (_, context) => MaterialApp(
+          title: "Boletozz",
+          debugShowCheckedModeBanner: false,
+          theme: AppTheme.lightTheme,
+          darkTheme: AppTheme.darkTheme,
+          initialRoute: '/',
+          routes: {
+            "/": (context) => const HomePage(),
+            "/bill-details": (context) => const BillDetailsPage(),
+            "/edit-bill": (context) => const EditBillPage(),
+          },
+        ),
       ),
     );
   }
